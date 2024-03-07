@@ -1,14 +1,14 @@
 console.log('I am Connected')
 
 // Demo - 1
-/*
+
 // ==== basic loop ==== \\
 
-// for (let i = 0; i < 10; i++) {
-//     console.log(`this is i = ${i}`);
-// }
+for (let i = 0; i < 10; i++) {
+    console.log(`this is i = ${i}`);
+}
 
-
+/*
 // ==== infinate loop -- VERY BAD!!! ==== \\
 // for (let i = 11; i > 10; i++) {
 //     console.log(`this is i = ${i}`);
@@ -18,13 +18,67 @@ console.log('I am Connected')
 // while loop (do not have to define the times it loops) + Break Key word
 
 // Example 1
-// let i = 0
+let i = 0
 
-// while (i < 10) {
-//     console.log(i)
-//     i++
-// }
+while (i < 10) {
+    console.log(i)
+    i++
+ }
+
+//pre-task 1 write a loop that will console.log 1-12
+
+for (let i = 0; i < 13; i++) {
+    console.log(`this is i = ${i}`);
+}
 */
+let i = 0
+
+while (i <= 12) {
+    console.log(i)
+    i++
+ }
+
+
+ //task 1 - write a loop that outputs the 7 times table
+
+ for (let i = 1; i <= 12; i++) {
+    console.log(`7 x ${i} = ${7 * i}`);
+}
+
+
+//task 2 - array of your fav foods, with some printed on the screen
+
+/*const arr1 = [1, 2, 3, 4]
+arr1[2] = 'rabbit';
+arr1[arr1.length] = 5;
+arr1[10] = 9
+
+console.log(arr1);
+console.log(arr1.length); 
+*/
+const favoriteFoods = ["chocolate", "baked camembert", "raspberry brownie ice cream", "gyoza"];
+
+for (let i = 0; i < favoriteFoods.length; i++) {
+    console.log(favoriteFoods[i]);
+}
+
+
+//Task 3 - use a loop
+
+const favouriteFoods = ['broccoli', 'noodles', 'pizza'];
+for (let i = 0; i < favouriteFoods.length; i++) {
+	console.log('Food')
+}
+
+//Justin's example with some ChatGPT
+//const favoriteFoods = ["broccoli", "noodles", "pizza"]; // Define the array first
+//const newFood = prompt('add a food');
+
+//favoriteFoods.push(newFood); // Push the new food into the array
+
+//console.log(favoriteFoods); // Log the updated array to the console
+
+
 
 // Demo - 2
 /*
@@ -51,12 +105,13 @@ console.log('I am Connected')
 //     varName[[1,2],['a','b'],[100,200]]
 // 24) Use 'CONST' with arrays
 
+
 // ****** Part 18 ****** \\
 // arrays
-// console.log([]);
-// console.log([1,2,3,4]);
-// console.log([1,'2',true,[1,2,3]]);
-// console.log(typeof []);
+console.log([]);
+console.log([1,2,3,4]);
+console.log([1,'2',true,[1,2,3]]);
+console.log(typeof []);
 
 
 // ****** Part 19 ****** \\
@@ -79,7 +134,7 @@ console.log('I am Connected')
 
 
 // ****** Part 21 ****** \\
-// Method push & unshift
+// Method push & unshift - you might use these quite often (more so push and pop)
 // const arr1 = [1, 2, 3, 4]
 // // arr1.push(5);
 // // arr1.pop();
@@ -104,6 +159,8 @@ console.log('I am Connected')
 // 	[100, 200],
 // ];
 
+//if you want to see just 'b' in the console log write arr2[1][1]
+
 // console.log(arr2[0][1]);
 
 
@@ -117,14 +174,15 @@ console.log('I am Connected')
 */
 
 // Demo - 3
-/*
+
 // ==== Standard Loop ==== \\
-// const array1 = [1, 2, 3, 4, 5];
+const array1 = [1, 2, 3, 4, 5];
 
-// for (let i = 0; i < array1.length; i++) {
-//     console.log(`array position = ${i} contains ${array1[i]}`);
-// }
+for (let i = 0; i < array1.length; i++) {
+     console.log(`array position = ${i} contains ${array1[i]}`);
+ }
 
+/*
 // ==== Nest Loops ==== \\
 // const array1 = [1, 2, 3, 4, 5];
 
@@ -177,12 +235,58 @@ console.log('I am Connected')
 //     b) access an object = varName.key.innerKey
 
 // ****** Part 25 ****** \\
+*/
 // Object
-const obj1 = {
+ const obj1 = {
 	firstname: 'Foo',
 	lastName: 'Bar',
+	dob: new Date(),
 };
+console.log(obj1);
 
+//Pete's recipe code
+
+const recipe = {
+    title: "Cheese Spots",
+    serving: 2,
+    ingredients: [
+        "4 slices of bread",
+        "200g of cheese",
+        "1 tomato each",
+        "1 tbsp tomato ketchup",
+		"Salt and pepper, to taste"],
+    instructions: [
+        "To begin making your Cheese Spots, set your grill to high",
+        "Lightly toast your bread while the grill heats up", 
+		"Slice your cheese thinly and place it on your lightly toasted bread",
+        "Thinly slice your tomatoes, sharing the slices out on each bread slice",
+		"Add a dollop of ketchup to each cheesy, tomatoey bread slice and then add salt and pepper to taste",
+		"Place in the grill for 10 minutes",
+		"Once the cheese has melted, pop your Cheese Spots on a plate and enjoy!"
+    ],
+    letsCook() {
+        console.log(`I'm hungry let's cook ${this.title}`)
+    }
+}
+
+console.log("The dish is called " + recipe.title);
+console.log("The number of servings is " + recipe.serving);
+
+for(const ingredient of recipe.ingredients){
+   console.log(ingredient);
+}
+for(const instruction of recipe.instructions){
+    console.log(instruction);
+}
+
+recipe.letsCook();
+// Justin's example of looping it
+//for (let i = 0; i < recipe.instructions.length; i++) {
+//	console.log ('Instructions ${i + 1} - ${recipe.instructions[i]}');
+//}
+
+
+/*
 // // Selector Brackets
 // console.log(obj1['lastName']);
 // // Selector Dot Notation
